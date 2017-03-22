@@ -1,5 +1,6 @@
 # alfred3-iploc-workflow
 IP Locator workflow for Alfred3
+* [Download](https://github.com/taozen/alfred3-iploc-workflow/raw/master/asset/iploc.alfredworkflow)
 
 ## Snapshots
 <img src="https://github.com/taozen/alfred3-iploc-workflow/raw/master/asset/entry.png" width="600">
