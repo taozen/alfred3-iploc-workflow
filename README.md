@@ -2,4 +2,4 @@
 IP Locator workflow for Alfred3
 
 ## Snapshots
-![image](alfred3-iploc-workflow/asset/entry.png)
+![image](https://github.com/taozen/alfred3-iploc-workflow/asset/entry.png)
