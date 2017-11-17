@@ -34,9 +34,9 @@ if query == "me"
 
   if output =~ /\D+(\d+\.\d+\.\d+\.\d+).*/
     query = $1
-    hint = <<-EOF
-      {"subtitle": "My IP","title": "#{query}","icon": {"path": "network.png"}},
-      EOF
+
+    # Don't forget the trailing comma.
+    hint = %Q|{"subtitle": "My IP","title": "#{query}","icon": {"path": "network.png"}},|
   else
     puts %Q|{"items": [{"title": "无法获取IP地址: #{output}","icon": {"path": "help.png"}}]}|
     exit
