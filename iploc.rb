@@ -30,10 +30,17 @@ query = ARGV[0].strip
 hint = ""
 
 if query == "me"
-  query = %x{curl -s http://ip.6655.com/ip.aspx}.strip
-  hint = <<-EOF
-    {"subtitle": "My IP","title": "#{query}","icon": {"path": "network.png"}},
-    EOF
+  output = %x{curl -s http://myip.ipip.net 2>&1}.strip
+
+  if output =~ /\D+(\d+\.\d+\.\d+\.\d+).*/
+    query = $1
+    hint = <<-EOF
+      {"subtitle": "My IP","title": "#{query}","icon": {"path": "network.png"}},
+      EOF
+  else
+    puts %Q|{"items": [{"title": "无法获取IP地址: #{output}","icon": {"path": "help.png"}}]}|
+    exit
+  end
 end
 
 if !valid_ip?(query)
