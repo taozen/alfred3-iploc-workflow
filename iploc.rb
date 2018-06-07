@@ -49,7 +49,7 @@ if !valid_ip?(query)
 end
 
 ans = %x{curl -s http://freeapi.ipip.net/#{query}}
-ary = ans.tr("\"[] ", '').split(',', -1)
+ary = ans.tr("\"[] \n", '').split(',', -1)
 ary.map!{|x| x.empty? ? "N/A" : x}
 
 puts <<-EOF
